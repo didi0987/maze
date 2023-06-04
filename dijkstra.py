@@ -93,8 +93,8 @@ class Dijkstra:
                     sum+=node[1]
      #               print(f"sum:{sum},node:{node[0].value},weight:{node[1]}")
         return sum
-    zero=0
-    total=0 
+    zero=0 #count how many paths are zero length (answer)
+    total=0 # count how many paths in total
     def traverse(self,startnode,path):
         startnode.visited=True
         path.append(startnode)
