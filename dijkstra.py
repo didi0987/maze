@@ -82,16 +82,15 @@ class Dijkstra:
         target_node=self.graph.find_node(self.target)
         
         return 0
-   
+    
     def totalcost(self,path):
         sum=0
         for i in range(len(path)-1):
-           curr_node=self.graph.find_node(path[i].value)
-           next_node=self.graph.find_node(path[i+1].value)
-           for node in curr_node.neighbors:
-               if node[0].value==next_node.value:
+            curr_node=self.graph.find_node(path[i].value)
+            next_node=self.graph.find_node(path[i+1].value)
+            for node in curr_node.neighbors:
+                if node[0].value==next_node.value:
                     sum+=node[1]
-     #               print(f"sum:{sum},node:{node[0].value},weight:{node[1]}")
         return sum
     zero=0 #count how many paths are zero length (answer)
     total=0 # count how many paths in total
@@ -114,7 +113,7 @@ class Dijkstra:
                 node[0].visited=True
                 #print(f"{node[0].value}")
                 #self.sum+=node[1]
-               #print(f"{self.sum}")
+                #print(f"{self.sum}")
                 self.traverse(node[0],path)
         path.pop()
         startnode.visited=False
